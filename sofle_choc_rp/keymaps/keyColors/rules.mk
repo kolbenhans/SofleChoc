@@ -14,3 +14,5 @@ OS_DETECTION_ENABLE = yes   # Detect the connected OS (Win/Mac/Linux) for OLED/K
 CONSOLE_ENABLE = no
 
 RGB_MATRIX_ENABLE = yes
+
+OPT_DEFS += -DVIA_QMK_RGB_MATRIX_ENABLE

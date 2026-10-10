@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
 
-#define RPC_M2S_BUFFER_SIZE 112
+#define RPC_M2S_BUFFER_SIZE 87
 
 /* USB & Reset */
 // Master per USB-Enumeration wie Original-sofle_choc (GP19-VBUS nicht noetig)
@@ -42,7 +42,7 @@
     #define WS2812_DI_PIN GP0
     #define WS2812_PIO_USE_PIO1
     #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 180
-    #define RGB_MATRIX_TIMEOUT 600000 // 300000 = 5 minutes in ms.
+    #define RGB_MATRIX_TIMEOUT 1200000 // 300000 = 5 minutes in ms.
     #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
     #define RGB_MATRIX_KEYPRESSES
     #define RGB_MATRIX_SLEEP
