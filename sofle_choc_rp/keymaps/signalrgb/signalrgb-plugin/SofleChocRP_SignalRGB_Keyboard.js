@@ -7,6 +7,7 @@ export function DeviceType() { return "keyboard"; }
 export function Size() { return [58, 18]; }
 export function DefaultPosition() { return [10, 100]; }
 export function DefaultScale() { return 8.0; }
+export function ImageUrl() { return "https://josefadamcik.github.io/SofleKeyboard/images/build_guide_choc/keyboard.jpeg"; }
 
 /* global
 shutdownMode:readonly
