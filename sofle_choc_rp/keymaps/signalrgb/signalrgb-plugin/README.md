@@ -1,5 +1,10 @@
 # SignalRGB plugin for this board
 
+This folder is shared (via symlink) by two keymaps: `signalrgb` (SignalRGB
+only) and `comboRGB-signalrgb` (SignalRGB + KeyColors + KeyPeek combined).
+The plugin itself is identical either way — only the firmware-side
+activation differs, see "Switching modes on `comboRGB-signalrgb`" below.
+
 This keymap (`signalrgb`) flashes firmware that speaks the
 [SRGBmods QMK_Community_Module](https://github.com/SRGBmods/QMK_Community_Module)
 protocol — but SignalRGB's own QMK support
@@ -21,6 +26,26 @@ plugin that makes it work.
      Windows, but matches SignalRGB's own convention)
 3. Restart SignalRGB. The keyboard should show up as "Sofle Choc RP
    (SignalRGB)" in the device list.
+
+## Switching modes on `comboRGB-signalrgb`
+
+Only relevant for the combined keymap (`keymaps/comboRGB-signalrgb`), not
+plain `signalrgb`.
+
+SignalRGB's own HID-triggered activation (`effectEnable()`, opcode `0x25`)
+didn't reliably switch the board into SignalRGB mode on this combined build
+(root cause not found — works fine in the standalone `signalrgb` keymap).
+As a fallback, two keys on Layer 3 (`_AMBIENT`) switch modes manually,
+hardcoded so they survive future Vial re-imports:
+
+| Key              | Layer 3 position | Effect           |
+| ---------------- | ----------------- | ---------------- |
+| `KEYBIND_USER01` | Esc                | KeyColors        |
+| `KEYBIND_USER02` | 1                  | SignalRGB         |
+
+Hold the layer key, tap Esc for KeyColors or 1 for SignalRGB. Both also
+call `rgb_matrix_enable_noeeprom()` first, in case a prior brightness/mode
+write left the matrix disabled.
 
 ## Notes
 

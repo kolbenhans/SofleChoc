@@ -1,0 +1,3 @@
+{
+    "modules": ["kolbenhans/key_colors", "kolbenhans/audio_visualizer", "srwi/keypeek_layer_notify", "signalrgb"]
+}
